@@ -1,11 +1,4 @@
 import Fastify, {FastifyRequest} from 'fastify'
-import { DbConnector } from "./db-connector"
-import { usersRoutes } from "./users-routes"
-import {DbConn} from "../dbConn";
-import {basicRoutes} from "./basic-routes";
-import * as CreateUserRequestBodySchema from "../json_schema/create-user-request-body.schema.json";
-import {User} from "../entities/user";
-import {UserController} from "../controllers/UserController";
 
 export const server = Fastify({
     logger: true,
@@ -21,9 +14,6 @@ interface Params {
  */
 
 void server.register((app, _, done) => {
-    const dbConn = DbConn.getInstance();
-    const userRepo = dbConn.appDataSource.getRepository(User)
-    const userController = new UserController(userRepo);
 
     /*app.get('/users', () => userController.getCollection());
 
