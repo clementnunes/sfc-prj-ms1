@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "if [ -d \"dist\" ]; then rm -Rf dist; fi && tsc",
-    "build-w": "del dist && tsc",
+    "build-w": "rmdir /s /q dist && tsc",
     "start": "npm run build && node dist/index.js",
     "start-w": "npm run build-w && node dist/index.js",
     "start-lint": "npm run lint && npm run build && node dist/index.js",
@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
+    "@fastify/cookie": "^8.3.0",
     "@fastify/postgres": "^5.2.0",
     "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
