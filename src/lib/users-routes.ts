@@ -17,9 +17,5 @@ export function usersRoutes (fastify: FastifyInstance, options: object, done: an
 
     fastify.get<{ Params: { id: string } }>('/users/:id', async (request) => await userController.get(request.params.id));
 
-    const schema = {
-        body: CreateUserRequestBodySchema,
-    }
-
     done();
 }
