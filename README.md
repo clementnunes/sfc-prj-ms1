@@ -50,7 +50,7 @@ The microservice works using NodeJS platform. They are written in TypeScript and
 -	Faker: Fake data generation
 
 The microservices provide basic usage : create, modify, delete, get and get collection of User entity.
-The architecture is MVC with internal services.
+The architecture is MVC with internal services. 
 The microservices are covered by several tests to ensure it’s running smoothly. The test suite is based on Chai and Mocha and tests internal services and also using routing feature.
 
 ## Contact
